@@ -67,3 +67,41 @@ elif (cost_ground <= cost_drone):
 
 print("Ground: $" + str(cost_ground) + "\nDrone: $" + str(cost_drone) + "\nPremium Ground: $125")
 print("Recommended shipping method: " + recommended_shipping + " - $" + str(shipping_price))
+
+#Function Challenges
+#1
+#Defind the function to accept two input parameters called base and exponent
+#Calculate the result of base to the power of exponent
+#Use an if statement to test if the result is greater than 5000. If it is then return true, otherwise return false
+def large_power(base, exponent):
+    result = base ** exponent
+    if result > 5000:
+        return True
+    else:
+        return False
+
+
+base = int(input("Enter the base: "))
+exponent = int(input("Enter the exponent: "))
+print("The result is larger than 5000: " + str(large_power(base, exponent)))
+
+#2
+#Define the function to accept five parameters, budget, food_bill, electricity_bill, internet_bill, and rent
+#Calcualte the sum of the last four parameters
+#Use if and else statements to test if the budget is less than the sum of the calculated sum from the previous step
+#If the condition is true, return true, otherwise return false
+
+def within_budget(budget, food_bill, electricity_bill, internet_bill, rent):
+    total_cost = food_bill + electricity_bill + internet_bill + rent
+    if total_cost > budget:
+        return False
+    elif budget >= total_cost:
+        return True
+
+budget = int(input("What is your budget in dollars: "))
+food_bill = 300
+electricity_bill = 150
+internet_bill = 80
+rent = 1500
+print("Result of calculation, determining if this is within your budget: " + str(within_budget(budget, food_bill, electricity_bill, internet_bill, rent)))
+
