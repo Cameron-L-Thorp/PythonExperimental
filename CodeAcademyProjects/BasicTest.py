@@ -105,3 +105,57 @@ internet_bill = 80
 rent = 1500
 print("Result of calculation, determining if this is within your budget: " + str(within_budget(budget, food_bill, electricity_bill, internet_bill, rent)))
 
+#3
+#Define our function with two inputs, num1 and num2
+#Multiply the second input by 2
+#Compare the result of num2 with num1
+#If num1 is greater return true, or if not, false
+
+def more_than_double(num1, num2):
+    if num1 > (num2 * 2):
+        return True
+    else:
+        return False
+
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+print("Is the first number more than double the second? " + str(more_than_double(num1, num2)))
+
+#4
+#Define the function header to accept one input, num
+#Calcualte if the remainder of the input devided by 10
+#If the input was 0 return True, if not return False
+
+def div_by_ten(num):
+    remainder = num % 10
+    if remainder == 0:
+        return True
+    else:
+        return False
+
+check_if_divisible_by_ten = int(input("Enter a number to devide by 10: "))
+if check_if_divisible_by_ten:
+    print("This number IS divisible by 10 :).")
+else:
+    print("This number IS NOT divisible by 10 :(.")
+
+#5
+#Define the function to accept two parameters, num1 and num2
+#Add the two parameters together
+#Test if the reuslt is not equal to 10
+#If it is not, return true, otherwise false
+
+def adds_to_ten(num1, num2):
+    total = num1 + num2
+    if total == 10:
+        return True
+    else:
+        return False
+
+num1_to_ten = int(input("Enter your first number."))
+num2_to_ten = int(input("Enter your second number."))
+result_of_adds_to_ten = adds_to_ten(num1_to_ten, num2_to_ten)
+if result_of_adds_to_ten:
+    print("The numbers add to ten!")
+else:
+    print("The numbers don't add to ten.")
