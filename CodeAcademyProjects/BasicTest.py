@@ -201,7 +201,7 @@ def same_name(my_name, your_name):
         return False
 
 first_name = name
-second_name = input("Enter your firstName")
+second_name = input("Enter your first name: ")
 if same_name(first_name, second_name):
     print("Names are the same.")
 else:
