@@ -104,4 +104,82 @@ print("There are " + str(len(lst_return) - 1) + " number(s), from " + str(start)
 #get all elemens after the ending index
 #combind the two partial list into the result
 #return the result
-        
+
+def list_chunk(origin_lst, start, end):
+    left_lst = []
+    right_lst = []
+    for i in range(0, len(origin_lst)):
+        if i < start:
+            left_lst.append(origin_lst[i])
+        elif i > end:
+            right_lst.append(origin_lst[i])
+    return left_lst + right_lst
+
+origin_lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+start_ind = 2
+end_ind = 6
+final_lst = list_chunk(origin_lst, start_ind, end_ind)
+print(final_lst)
+    
+#8
+#Define the function to accept 3 params, list, first item, second item
+#Count the number of times first item occurs
+#Count the number of times second item occurs
+#Return the item that appears the most frequently, if they occur the same amount of times, return item one
+
+def more_frequent(lst, val1, val2):
+    first_freq = lst.count(val1)
+    second_freq = lst.count(val2)
+    if first_freq >= second_freq:
+        return val1
+    else:
+        return val2
+
+freq_check_list = [1, 2, 2, 3, 3, 3, 4, 4, 4]
+print("The most frequent number is: " + str(more_frequent(freq_check_list, 2, 3)))
+
+#9
+#Define the function to accept 2 params, list and index
+#Test if the index is invalid, if it is return the original list
+#If it is valid, get all items up to that index and store in a new list
+#append the value at the index times two to the list
+#add the rest of the list back onto the list
+#return the new list
+
+def add_double_num(lst_original, index):
+    if index >= len(lst_original):
+        return lst_original
+    else:
+        new_lst = []
+        for i in range(0, (index + 1)):
+            new_lst.append(lst_original[i])
+        new_lst.append((lst_original[index] * 2))
+        for i in range((index + 1), (len(lst_original))):
+            new_lst.append(lst_original[i])
+        return new_lst
+
+lst_pre_double = [1, 2, 3, 4, 5, 6]
+user_index = int(input("Double index: "))
+lst_post_double = add_double_num(lst_pre_double, user_index)
+print(lst_post_double)
+
+#10
+#Define a function to accept of param for list of numbers
+#determine if the length is even or odd
+#if len is even, return average of two middle numbers
+#if len is odd, return middle number
+
+def middle_number(nums):
+    if (len(nums) % 2) == 0:
+        mid_num = (nums[int(len(nums) / 2)] + nums[int(len(nums) / 2) - 1]) / 2
+    else:
+        mid_num = nums[int(len(nums) / 2)]
+    return mid_num
+
+middle_lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+middle_lst_even = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+selection = int(input("1 for odd, 2 for even: "))
+if selection == 1:
+    print(middle_number(middle_lst))
+else:
+    print(middle_number(middle_lst_even))
