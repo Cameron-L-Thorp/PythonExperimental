@@ -80,3 +80,21 @@ full_lst = combination_sort(unsort_lst, unsort_lst2)
 print(full_lst)
 
 #6
+#Defind the funciton to accept one parameter for our starting number
+#Calculate the numbers between starting and 100 while incremening by 3
+#store numbers in a list
+#return list
+
+def three_to_hundred(start_num):
+    num = start_num
+    lst_return = [start_num]
+    while num <= 97:
+        num += 3
+        lst_return.append(num)
+    return lst_return
+
+start = int(input("Starting number: "))
+lst_return = three_to_hundred(start)
+print(lst_return)
+print("There are " + str(len(lst_return) - 1) + " number(s), from " + str(start) + " to 100 (iterating by 3).")
+        
