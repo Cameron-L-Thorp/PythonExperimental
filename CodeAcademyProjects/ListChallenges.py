@@ -97,4 +97,11 @@ start = int(input("Starting number: "))
 lst_return = three_to_hundred(start)
 print(lst_return)
 print("There are " + str(len(lst_return) - 1) + " number(s), from " + str(start) + " to 100 (iterating by 3).")
+
+#7
+#Define the function to accept 3 params, list, starting index, ending index
+#get all elements before starting index
+#get all elemens after the ending index
+#combind the two partial list into the result
+#return the result
         
